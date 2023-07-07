@@ -9,8 +9,19 @@ paging 처리 진행
   3. 파일 업로드 및 저장
   4. 서버 관련 설정 
 ---
-
-
+---
+## 작동화면
+### 1. 최초 화면
+<p align="center">
+  <img src="https://ibb.co/xH3zhdJ">
+</p>
+---
+### 2. 버튼 누를 시 3개의 항목 추가 표시
+<p align="center">
+  <img src="https://ibb.co/88Jx0z2">
+</p>
+---
+---
 ### #페이징 처리 방법
 1. ajax이용하여 진행
 2. data 처리는 myBatis를 통해 mapper/sqlsession으로 처리
