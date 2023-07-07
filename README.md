@@ -12,15 +12,12 @@ paging 처리 진행
 ---
 ## 작동화면
 ### 1. 최초 화면
-<a href="https://ibb.co/xH3zhdJ"> 사진 자료 1</a>
+##### <a href="https://ibb.co/xH3zhdJ"> 사진 자료 1</a>
 
 ---
 ### 2. 버튼 누를 시 3개의 항목 추가 표시
-<p align="center">
-  <img src="https://ibb.co/88Jx0z2">
-</p>
 
-<a href="https://ibb.co/88Jx0z2"> 사진 자료 2</a>
+##### <a href="https://ibb.co/88Jx0z2"> 사진 자료 2</a>
 ---
 ---
 ### #페이징 처리 방법
