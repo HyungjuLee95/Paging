@@ -92,55 +92,54 @@ oracle.PASSWORD=hi123456
 ```
 
 function loadMoreItems() {
-							$
-									.ajax({
-										url : "json_PagingSelectAll.do", // json 목록 가져오기
-										method : "GET",
-										data : {
-											page : currentPage,
-											itemsPerPage : itemsPerPage
-										},
-										dataType : "json",
-										success : function(response) {
-											//불러온 항목 처리 및 가공, 출력(html에 추가) 
-											var items = response;
-											var html = "";
-											var startIndex = (currentPage - 1)
-													* itemsPerPage;
-											var endIndex = startIndex
-													+ itemsPerPage;
+			$.ajax({
+				url : "json_PagingSelectAll.do", // json 목록 가져오기
+				method : "GET",
+				data : {
+					page : currentPage,
+					itemsPerPage : itemsPerPage
+				},
+				dataType : "json",
+				success : function(response) {
+					//불러온 항목 처리 및 가공, 출력(html에 추가) 
+					var items = response;
+					var html = "";
+					var startIndex = (currentPage - 1)
+							* itemsPerPage;
+					var endIndex = startIndex
+							+ itemsPerPage;
 
-											if (startIndex >= items.length) {
-												// 요청한 페이지에 추가 항목이 없는 경우
-												$(".more_but").hide();
-												alert("더 이상 내용이 없습니다.");
+					if (startIndex >= items.length) {
+						// 요청한 페이지에 추가 항목이 없는 경우
+						$(".more_but").hide();
+						alert("더 이상 내용이 없습니다.");
 
-												return;
-											}
+						return;
+					}
 
-											if (endIndex > items.length) {
-												// 마지막 페이지에서 아이템의 인덱스 조정
-												endIndex = items.length;
-											}
+					if (endIndex > items.length) {
+						// 마지막 페이지에서 아이템의 인덱스 조정
+						endIndex = items.length;
+					}
 
-											for (var i = startIndex; i < endIndex; i++) {
-												var vo = items[i];
+					for (var i = startIndex; i < endIndex; i++) {
+						var vo = items[i];
 
-												html += '<li>';
-												html += '<h3>';
-												html += '<a href="cs_notice_selectOne.do?num=' + vo.num + '">' + vo.title + '</a>';
-												html += '</h3>';
-												html += '</li>';
-											
-											}
+						html += '<li>';
+						html += '<h3>';
+						html += '<a href="cs_notice_selectOne.do?num=' + vo.num + '">' + vo.title + '</a>';
+						html += '</h3>';
+						html += '</li>';
+					
+					}
 
-											$(".ajaxLoop").append(html); // 가져온 항목을 추가합니다
-										},
-										error : function(xhr, status, error) {
-											console.error(error);
-										}
-									});
-						}
+					$(".ajaxLoop").append(html); // 가져온 항목을 추가합니다
+				},
+				error : function(xhr, status, error) {
+					console.error(error);
+				}
+			});
+}
 
 
 ```
